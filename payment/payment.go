@@ -160,6 +160,7 @@ func (res response) Check() error {
 
 // PaidResponse 支付返回面向用户的集合
 type PaidResponse struct {
+	Response response
 	AppID    string `xml:"appid"` // 小程序ID
 	MchID    string `xml:"mch_id"`
 	PrePayID string `xml:"prepay_id"`
@@ -225,7 +226,7 @@ func (o Order) Unify(key string) (pres PaidResponse, err error) {
 	if err = res.Check(); err != nil {
 		return
 	}
-
+	pres.Response = res.response
 	pres = res.PaidResponse
 	return
 }
