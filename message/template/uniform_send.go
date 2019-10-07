@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/medivhzhan/weapp"
-	"github.com/medivhzhan/weapp/util"
+	"github.com/hoperuin/weapp"
+	"github.com/hoperuin/weapp/util"
 )
 
 const uniformSendAPI = "/cgi-bin/message/wxopen/template/uniform_send"
